@@ -39,7 +39,7 @@ nr_letters = int(input("How many letters?\n"))
 nr_numbers = int(input("How many numbers?\n"))
 nr_symbols = int(input("How many symbols?\n"))
 
-password = ''
+password = []
 
 # Generate letters
 for _ in range(nr_letters):
@@ -54,6 +54,11 @@ for _ in range(nr_symbols):
     password += random.choice(symbols)
 
 # Shuffle the password
-password = ''.join(random.sample(password, len(password)))
+random.shuffle(password)
 
-print("Your password is:", password)
+pwd = ""
+
+for ch in password:
+    pwd += ch
+
+print("Your password is:", pwd)
